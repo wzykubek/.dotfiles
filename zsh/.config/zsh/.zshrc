@@ -1,7 +1,7 @@
 HISTSIZE="10000"
 SAVEHIST="10000"
 HISTORY_IGNORE='(rm *|pkill *|cp *)'
-HISTFILE="$HOME/.zsh_history"
+HISTFILE="$XDG_STATE_HOME/zsh_history"
 mkdir -p "$(dirname "$HISTFILE")"
 
 setopt HIST_FCNTL_LOCK
@@ -46,12 +46,12 @@ zstyle ':completion:*' menu no
 zstyle ':completion:*:descriptions' format '[%d]'
 zstyle ':fzf-tab:complete:cd:*' fzf-preview 'eza -1 --color=always $realpath'
 
-export GPG_TTY=$(tty)
-export SSH_AUTH_SOCK=$(gpgconf --list-dirs agent-ssh-socket)
-gpgconf --launch gpg-agent
-
 if [[ $TERM != "dumb" ]]; then
   eval "$(starship init zsh)"
 fi
 
 eval "$(zoxide init zsh --cmd cd)"
+
+eval "$(gpgconf --launch gpg-agent)"
+export GPG_TTY=$(tty)
+export SSH_AUTH_SOCK=$(gpgconf --list-dirs agent-ssh-socket)
