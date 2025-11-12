@@ -9,3 +9,6 @@ bat
 gnupg
 neovim
 starship
+curl
+wget
+stow
