@@ -1,0 +1,11 @@
+zsh
+fzf
+git
+eza
+fd
+ripgrep
+zoxide
+bat
+gnupg
+neovim
+starship
