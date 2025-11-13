@@ -15,6 +15,8 @@ unsetopt HIST_EXPIRE_DUPS_FIRST
 setopt SHARE_HISTORY
 unsetopt EXTENDED_HISTORY
 
+export SUDO_PROMPT="$(printf '\033[1;31m')[sudo]$(printf '\033[0m') %p: "
+
 if [[ $(uname) = "Linux" ]]; then
     source /usr/share/zsh/scripts/zplug/init.zsh
 elif [[ $(uname) = "Darwin" ]]; then
@@ -31,6 +33,7 @@ fi
 
 zplug load
 
+alias -- sudo='sudo '
 alias -- cat=bat
 alias -- diff='diff --color=auto'
 alias -- grep='grep --color=auto'
