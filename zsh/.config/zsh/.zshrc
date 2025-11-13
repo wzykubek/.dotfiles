@@ -15,8 +15,11 @@ unsetopt HIST_EXPIRE_DUPS_FIRST
 setopt SHARE_HISTORY
 unsetopt EXTENDED_HISTORY
 
-export ZPLUG_HOME=~/.zplug
-source $ZPLUG_HOME/init.zsh
+if [[ $(uname) = "Linux" ]]; then
+    source /usr/share/zsh/scripts/zplug/init.zsh
+elif [[ $(uname) = "Darwin" ]]; then
+    source /opt/homebrew/opt/zplug/init.zsh
+fi
 
 zplug "jeffreytse/zsh-vi-mode"
 zplug "Aloxaf/fzf-tab"
