@@ -12,3 +12,5 @@ starship
 curl
 wget
 stow
+uv
+zplug
