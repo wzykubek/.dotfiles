@@ -7,14 +7,14 @@ else ifeq "$(UNAME)" "Darwin"
 endif
 
 packages-linux:
-	paru -Sy --noconfirm - < packages.common.txt < packages.arch.txt
+	paru -Sy --noconfirm --needed - < packages.common.txt < packages.arch.txt
 
 postinstall-linux:
 	@echo "Linux postinstall"
 	sudo ln -sf /usr/bin/pinentry-gnome3 /usr/local/bin/pinentry
 
 packages-darwin:
-	brew install $(shell cat packages.common.txt packages.macos.txt)
+	xargs brew install < packages.common.txt < packages.macos.txt
 
 postinstall-darwin:
 	@echo "Darwin postinstall"
