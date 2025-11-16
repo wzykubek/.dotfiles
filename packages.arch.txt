@@ -1,1 +1,2 @@
 ttf-iosevka-nerd
+rclone
