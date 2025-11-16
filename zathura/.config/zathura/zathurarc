@@ -1,0 +1,6 @@
+map r reload
+map R rotate
+map K zoom in
+map J zoom out
+map c recolor
+map b toggle_statusbar
