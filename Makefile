@@ -7,7 +7,7 @@ else ifeq "$(UNAME)" "Darwin"
 endif
 
 packages-linux:
-	paru -Sy $(shell cat packages.common.txt packages.arch.txt)
+	paru -Sy --noconfirm - < packages.common.txt < packages.arch.txt
 
 postinstall-linux:
 	@echo "Linux postinstall"
