@@ -41,7 +41,6 @@ alias -- ip='ip -color=auto'
 alias -- less='bat --paging=always'
 alias -- ls='eza --hyperlink --git --icons=auto'
 alias -- sudo='sudo '
-alias -- tmux=zellij
 alias -- vim=nvim
 alias -- vi=nvim
 
