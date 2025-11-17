@@ -16,3 +16,4 @@ stow
 uv
 zplug
 typst
+tmux
