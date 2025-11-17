@@ -41,4 +41,44 @@ vim.lsp.config['lua_ls'] = {
     }
 }
 
+vim.lsp.config["tinymist"] = {
+    cmd = { "tinymist" },
+    filetypes = { "typst" },
+    settings = {
+        formatterMode = "typstyle",
+        exportPdf = "onType"
+    },
+}
+
 vim.lsp.enable('lua_ls')
+vim.lsp.enable('tinymist')
+vim.keymap.set('n', 'gd', vim.lsp.buf.definition, { desc = 'Go to definition' })
+vim.keymap.set('n', 'gy', vim.lsp.buf.type_definition, { desc = 'Go to type definition' })
+vim.keymap.set('n', 'gA', vim.lsp.buf.references, { desc = 'Find all references' })
+vim.keymap.set('n', 'gI', vim.lsp.buf.implementation, { desc = 'Go to implementation' })
+vim.keymap.set('n', 'grn', vim.lsp.buf.rename, { desc = 'Rename symbol' })
+vim.keymap.set('n', 'g.', vim.lsp.buf.code_action, { desc = 'Show code actions' })
+vim.keymap.del('n', 'grr')
+vim.keymap.del('n', 'gra')
+vim.keymap.del('n', 'gri')
+vim.keymap.del('n', 'grt')
+
+vim.api.nvim_create_autocmd("LspAttach", {
+    group = vim.api.nvim_create_augroup("lsp", { clear = true }),
+    callback = function(args)
+        vim.api.nvim_create_autocmd("BufWritePre", {
+            callback = function()
+                vim.lsp.buf.format { async = false, id = args.data.client_id }
+            end,
+        })
+    end
+})
+
+vim.api.nvim_create_user_command("OpenPdf", function()
+    local filepath = vim.api.nvim_buf_get_name(0)
+    if filepath:match("%.typ$") then
+        local pdf_path = filepath:gsub("%.typ$", ".pdf")
+        vim.system({ "zathura", pdf_path })
+    end
+end, {})
+vim.keymap.set('n', '<leader>op', ':OpenPdf<cr>', { silent = true, desc = 'Open current file as PDF' })
