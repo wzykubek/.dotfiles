@@ -1,0 +1,45 @@
+cmd - h : yabai -m window --focus west
+cmd - j : yabai -m window --focus south
+cmd - k : yabai -m window --focus north
+cmd - l : yabai -m window --focus east
+
+cmd - e : yabai -m window --toggle split
+cmd - f : yabai -m window --toggle windowed-fullscreen
+ctrl + alt - r : yabai --restart-service && skhd --restart-service
+
+cmd - 1 : yabai -m space --focus 1
+cmd - 2 : yabai -m space --focus 2
+cmd - 3 : yabai -m space --focus 3
+cmd - 4 : yabai -m space --focus 4
+cmd - 5 : yabai -m space --focus 5
+cmd - 6 : yabai -m space --focus 6
+cmd - 7 : yabai -m space --focus 7
+cmd - 8 : yabai -m space --focus 8
+cmd - 9 : yabai -m space --focus 9
+cmd - 0 : yabai -m space --focus 0
+
+cmd + shift - h : yabai -m window --swap west
+cmd + shift - j : yabai -m window --swap south
+cmd + shift - k : yabai -m window --swap north
+cmd + shift - l : yabai -m window --swap east
+
+cmd + ctrl + shift - h : yabai -m window --warp west
+cmd + ctrl + shift - j : yabai -m window --warp south
+cmd + ctrl + shift - k : yabai -m window --warp north
+cmd + ctrl + shift - l : yabai -m window --warp east
+
+cmd + shift - 1 : yabai -m window --space --focus 1 
+cmd + shift - 2 : yabai -m window --space --focus 2 
+cmd + shift - 3 : yabai -m window --space --focus 3 
+cmd + shift - 4 : yabai -m window --space --focus 4 
+cmd + shift - 5 : yabai -m window --space --focus 5 
+cmd + shift - 6 : yabai -m window --space --focus 6 
+cmd + shift - 7 : yabai -m window --space --focus 7 
+cmd + shift - 8 : yabai -m window --space --focus 8 
+cmd + shift - 9 : yabai -m window --space --focus 9 
+cmd + shift - 0 : yabai -m window --space --focus 0 
+
+cmd - return : /Applications/Alacritty.app/Contents/MacOS/alacritty
+cmd - b : /Applications/Zen.app/Contents/MacOS/zen
+cmd - i : /System/Applications/System\ Settings.app/Contents/MacOS/System\ Settings
+
