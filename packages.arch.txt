@@ -1,2 +1,4 @@
 ttf-iosevka-nerd
 rclone
+zathura
+zathura-pdf-mupdf
