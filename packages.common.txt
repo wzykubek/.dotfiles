@@ -21,3 +21,6 @@ typst
 tmux
 bind
 yazi
+bash-language-server
+shellcheck
+shfmt
