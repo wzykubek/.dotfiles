@@ -51,8 +51,15 @@ vim.lsp.config["tinymist"] = {
     },
 }
 
+vim.lsp.config["bash_ls"] = {
+    cmd = { "bash-language-server", "start" },
+    filetypes = { "sh", "bash" }
+}
+
 vim.lsp.enable('lua_ls')
 vim.lsp.enable('tinymist')
+vim.lsp.enable('bash_ls')
+
 vim.keymap.set('n', 'gd', vim.lsp.buf.definition, { desc = 'Go to definition' })
 vim.keymap.set('n', 'gy', vim.lsp.buf.type_definition, { desc = 'Go to type definition' })
 vim.keymap.set('n', 'gA', vim.lsp.buf.references, { desc = 'Find all references' })
