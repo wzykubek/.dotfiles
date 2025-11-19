@@ -130,6 +130,11 @@ bindkey "^[[B" down-line-or-search
 
 # Shift+tab in completion menu
 # bindkey '^[[Z' reverse-menu-complete
+
+# Wrap y for yazi as binding
+function y-widget() { y && zle reset-prompt }
+zle -N y-widget
+bindkey "^y" y-widget
 # }}}
 
 # Other {{{
