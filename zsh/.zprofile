@@ -1,3 +1,4 @@
+export EDITOR='nvim'
 export HOMEBREW_NO_EMOJI=1
 export HOMEBREW_NO_AUTO_UPDATE=1
 
