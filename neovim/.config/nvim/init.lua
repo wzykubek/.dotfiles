@@ -19,8 +19,9 @@ vim.o.swapfile = true;           -- Prevent data loss when editor crashes
 vim.o.cursorline = true;         -- Highlight current line
 vim.o.termguicolors = true;      -- Enable true colors in terminal
 vim.o.signcolumn = "auto:4";     -- Expand signcolumn when needed (e.g. display both diagnostics and gitsigns)
-vim.o.clipboard = "unnamedplus"; -- Use system clipboard
 vim.o.mouse = "nv";              -- Only use mouse in specified modes
+vim.o.foldmethod = "marker";
+vim.opt.clipboard:append "unnamedplus"; -- Use system clipboard
 
 vim.keymap.set('n', '<esc>', ':nohlsearch<cr>', { silent = true })
 
