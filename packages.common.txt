@@ -1,4 +1,6 @@
 zsh
+zsh-vi-mode
+zsh-syntax-highlighting
 fzf
 git
 eza
@@ -17,3 +19,5 @@ uv
 zplug
 typst
 tmux
+bind
+yazi
