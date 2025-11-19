@@ -76,14 +76,14 @@ export FZF_CTRL_T_OPTS="--preview 'bat -n --color=always {}'"
 export FZF_ALT_C_OPTS="--preview 'eza --tree --icons=auto --color=always {} | head -200'"
 
 # Use fd for listing path candidates.
-_fzf_compgen_path() {
-  fd --hidden --follow --exclude ".git" . "$1"
-}
+# _fzf_compgen_path() {
+#   fd --hidden --follow --exclude ".git" . "$1"
+# }
 
 # Use fd to generate the list for directory completion
-_fzf_compgen_dir() {
-  fd --type d --hidden --follow --exclude ".git" . "$1"
-}
+# _fzf_compgen_dir() {
+#   fd --type d --hidden --follow --exclude ".git" . "$1"
+# }
 
 _fzf_complete_paru() {
     if [[ "$@" == "paru -S"* ]]; then

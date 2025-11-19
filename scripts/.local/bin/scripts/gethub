@@ -1,0 +1,12 @@
+#!/usr/bin/env sh
+
+# Autistic script for converting GitHub links to files and download it via wget.
+
+echo "$1" | sed '
+  s/github.com/raw.githubusercontent.com/g;
+  s/blob//g
+  ' | xargs -r wget
+
+filename="$(echo "$1" | sed 's/.*\///g')"
+
+[ "$(sed 's/#\!\/.*/bang/g; 1q' "$filename")" = "bang" ] && chmod +x "$filename"

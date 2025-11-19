@@ -1,0 +1,18 @@
+#!/usr/bin/env sh
+
+# Menu with all scripts and descriptions.
+
+SCRIPTS_DIR="${HOME}/.local/bin/scripts/"
+
+filename="$(
+  head -n 3 $(find ${SCRIPTS_DIR} -maxdepth 1 -type f) |
+    sed 's/==> //g; s/<==//g; s/#!\/.*//g; /^$/d; s/# //g; s/.*\///g' |
+      awk '{printf (NR%2==0) ? "\t" $0 "\n" : $0}' | sort -r |
+        column -t -s $'\t' -o $'\t\t' |
+          fzf --preview "bat ${SCRIPTS_DIR}/{1}" --height 25 --layout reverse |
+            awk '{ print $1 }'
+)"
+
+[ ! "$filename" ] && exit 0
+
+$EDITOR "${SCRIPTS_DIR}/${filename}"
