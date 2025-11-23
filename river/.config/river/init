@@ -78,9 +78,6 @@ for i in $(seq 1 10); do
 
     riverctl map normal Super "$key" set-focused-tags $tag
     riverctl map normal Super+Shift "$key" set-view-tags $tag
-
-    riverctl map normal Super+Control "$key" toggle-focused-tags $tag
-    riverctl map normal Super+Shift+Control "$key" toggle-view-tags $tag
 done
 
 # Media keys
