@@ -36,6 +36,7 @@ export PATH="$PATH:$HOME/.local/bin:$HOME/.local/bin/scripts"
 
 # Custom scripts
 export CHEATS_DIRECTORY="$HOME/Notes/Software/Cheat-sheets"
+export DMENU_DEFAULT_OPTS='-f "Iosevka NFP-15" -nb "#191724" -nf "#e0def4" -sb "#f6c177" -sf "#191724"'
 
 if [[ $(uname) = "Darwin" ]]; then
     export HOMEBREW_NO_EMOJI=1
