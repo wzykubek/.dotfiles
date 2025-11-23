@@ -22,7 +22,6 @@ tmux
 typst
 uv
 wget
-yazi
 zoxide
 zsh
 zsh-syntax-highlighting

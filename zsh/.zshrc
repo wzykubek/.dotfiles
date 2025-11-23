@@ -145,19 +145,6 @@ alias vim=nvim
 
 alias -g -- -h='--help 2>&1 | bat --language=help --style=plain'
 alias -g -- --help='--help 2>&1 | bat --language=help --style=plain'
-
-# Wrappers
-# yazi
-function y() {
-	local tmp="$(mktemp -t "yazi-cwd.XXXXXX")" cwd
-	yazi "$@" --cwd-file="$tmp"
-	IFS= read -r -d '' cwd < "$tmp"
-	[ -n "$cwd" ] && [ "$cwd" != "$PWD" ] && builtin cd -- "$cwd"
-	rm -f -- "$tmp"
-}
-function y-widget() { y && zle reset-prompt }
-zle -N y-widget
-bindkey "^y" y-widget
 # }}}
 
 # History {{{
