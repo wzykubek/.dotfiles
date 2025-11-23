@@ -1,3 +1,4 @@
+7zip
 bash-language-server
 bat
 bind
@@ -9,6 +10,7 @@ git
 gnupg
 go
 gopls
+lf
 lua-language-server
 make
 neovide
@@ -20,9 +22,12 @@ stow
 stow
 tmux
 typst
+unzip
 uv
 wget
+zip
 zoxide
 zsh
 zsh-syntax-highlighting
 zsh-vi-mode
+zstd

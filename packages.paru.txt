@@ -30,6 +30,7 @@ swaybag
 swaylock
 tlp
 ttf-iosevka-nerd
+unrar-free
 waybar
 wl-clipboard
 wlr-randr
