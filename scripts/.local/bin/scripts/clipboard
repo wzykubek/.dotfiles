@@ -1,0 +1,5 @@
+#!/usr/bin/env sh
+
+# Simple clipboard history menu.
+
+cliphist list | dmenu -l 5 -p "clipboard" | cliphist decode | wl-copy

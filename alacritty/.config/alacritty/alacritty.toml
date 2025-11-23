@@ -1,0 +1,10 @@
+[general]
+import = ["rose-pine.toml"]
+
+[window]
+padding = { x = 2, y = 2 }
+dynamic_title = true
+
+[font]
+size = 15
+normal = { family = "Iosevka NFM" }

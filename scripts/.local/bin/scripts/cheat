@@ -1,0 +1,5 @@
+#!/usr/bin/env sh
+
+# Simple personal alternative to `cheat` or `cheat.sh`. Reads cheat-sheets from Obsidian notes.
+
+bat "$CHEATS_DIRECTORY/$(fd . --format "{/.}" "$CHEATS_DIRECTORY" | fzf --preview "bat --color=always $CHEATS_DIRECTORY/{}.md | sed '/\`\`.*/d'").md"

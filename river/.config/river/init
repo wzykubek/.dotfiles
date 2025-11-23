@@ -1,0 +1,100 @@
+#!/bin/sh
+
+# Startup {{{
+systemctl --user import-environment WAYLAND_DISPLAY XDG_CURRENT_DESKTOP
+dbus-update-activation-environment --systemd WAYLAND_DISPLAY XDG_CURRENT_DESKTOP=river
+systemctl --user restart xdg-desktop-portal
+
+river-ultitile &
+waybar &
+mako &
+wl-paste --watch cliphist store &
+# }}}
+
+# Settings {{{
+riverctl default-layout river-ultitile
+riverctl keyboard-layout pl
+riverctl set-repeat 50 300
+
+riverctl input pointer-1102-4639-DELL0816:00_044E:121F_Touchpad natural-scroll enabled
+wlr-randr --output DP-1 --mode 3440x1440 --pos 0,0
+wlr-randr --output eDP-1 --mode 1366x768 --pos 1037,1440
+
+riverctl background-color 0x191724
+riverctl border-color-focused 0xf6c177
+riverctl border-color-unfocused 0x26233a
+# }}}
+
+# Rules {{{
+riverctl rule-add ssd
+riverctl rule-add -app-id 'xdg-desktop-portal-gtk' float
+riverctl rule-add -app-id 'Pinentry' float
+
+riverctl rule-add -app-id 'firefox' tags "$((1 << 1))"           # Tag 2
+riverctl rule-add -app-id 'org.signal.Signal' tags "$((1 << 9))" # Tag 10
+# }}}
+
+# Bindings {{{
+# Common
+riverctl map normal Super+Shift Q close
+riverctl map normal Super+Shift E exit
+riverctl map normal Super+Shift B spawn "pkill -USR1 -f waybar" # Toggle
+
+riverctl map normal Super+Shift P spawn powermenu
+
+riverctl map normal Super Return spawn alacritty
+riverctl map normal Super D spawn dmenu-run
+riverctl map normal Super B spawn firefox
+riverctl map normal Super V spawn "$HOME/.local/bin/scripts/clipboard"
+riverctl map normal Super C spawn 'zenity --title "Color selection" --color-selection'
+
+# Layout
+riverctl map normal Super J focus-view next
+riverctl map normal Super K focus-view previous
+riverctl map normal Super Period focus-output next
+
+riverctl map normal Super+Shift Return zoom
+riverctl map normal Super Space toggle-float
+riverctl map normal Super F toggle-fullscreen
+riverctl map-pointer normal Super BTN_LEFT move-view
+riverctl map-pointer normal Super BTN_RIGHT resize-view
+riverctl map-pointer normal Super BTN_MIDDLE toggle-float
+
+riverctl map normal Super+Shift J swap next
+riverctl map normal Super+Shift K swap previous
+riverctl map normal Super+Shift Period send-to-output next
+
+riverctl map normal Super Plus send-layout-cmd river-ultitile "set integer main-size += 3"
+riverctl map normal Super Minus send-layout-cmd river-ultitile "set integer main-size -= 3"
+
+riverctl map normal Super Up send-layout-cmd river-ultitile "set string layout = main"
+riverctl map normal Super Down send-layout-cmd river-ultitile "set string layout = monocle"
+
+# Tags
+for i in $(seq 1 10); do
+    tag=$((1 << (i - 1)))
+    key="$i"
+    if [ "$i" = 10 ]; then key=0; fi
+
+    riverctl map normal Super "$key" set-focused-tags $tag
+    riverctl map normal Super+Shift "$key" set-view-tags $tag
+
+    riverctl map normal Super+Control "$key" toggle-focused-tags $tag
+    riverctl map normal Super+Shift+Control "$key" toggle-view-tags $tag
+done
+
+# Media keys
+for mode in normal locked; do
+    riverctl map $mode None XF86AudioRaiseVolume spawn 'wpctl set-volume @DEFAULT_AUDIO_SINK@ 5%+'
+    riverctl map $mode None XF86AudioLowerVolume spawn 'wpctl set-volume @DEFAULT_AUDIO_SINK@ 5%-'
+    riverctl map $mode None XF86AudioMute spawn 'wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle'
+
+    riverctl map $mode None XF86AudioMedia spawn 'playerctl play-pause'
+    riverctl map $mode None XF86AudioPlay spawn 'playerctl play-pause'
+    riverctl map $mode None XF86AudioPrev spawn 'playerctl previous'
+    riverctl map $mode None XF86AudioNext spawn 'playerctl next'
+
+    riverctl map $mode None XF86MonBrightnessUp spawn 'brightnessctl set +5%'
+    riverctl map $mode None XF86MonBrightnessDown spawn 'brightnessctl set 5%-'
+done
+# }}}

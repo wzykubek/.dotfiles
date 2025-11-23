@@ -1,0 +1,51 @@
+@import "rose-pine.css";
+
+* {
+    border-radius: 0;
+    font-family: "Iosevka NFP";
+    font-size: 15px;
+}
+
+window#waybar {
+    background: rgba(0, 0, 0, 0);
+    margin: 0;
+    padding: 0;
+}
+
+#tags button,
+.modules-left,
+.modules-center,
+.modules-right {
+    color: @gold;
+}
+
+#tags button, .modules-right {
+    background: @overlay;
+    padding: 0 10px;
+}
+
+#tags button.urgent {
+    background: @pine;
+}
+
+#tags button.focused {
+    background: @gold;
+    color: @base;
+    border: none;
+}
+
+#network {
+    color: @love;
+}
+
+#battery {
+    color: @foam;
+}
+
+#backlight {
+    color: @iris;
+}
+
+#wireplumber {
+    color: @rose;
+}

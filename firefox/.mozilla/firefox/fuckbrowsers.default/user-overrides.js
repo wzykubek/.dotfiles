@@ -1,0 +1,17 @@
+user_pref("browser.preferences.moreFromMozilla", false);
+user_pref("browser.aboutwelcome.enabled", false);
+user_pref("browser.profiles.enabled", true);
+user_pref("widget.gtk.non-native-titlebar-buttons.enabled", true);
+user_pref("browser.urlbar.scotchBonnet.enableOverride", false);
+user_pref("toolkit.legacyUserProfileCustomizations.stylesheets", true);
+user_pref("browser.compactmode.show", true);
+user_pref("layout.css.prefers-color-scheme.content-override", 0);
+user_pref("browser.urlbar.suggest.engines", false);
+user_pref("browser.urlbar.suggest.topsites", false);
+user_pref("pdfjs.disabled", true);
+user_pref("browser.link.open_newwindow.restriction", 0);
+user_pref("widget.gtk.hide-pointer-while-typing.enabled", false);
+user_pref("image.jxl.enabled", true);
+user_pref("browser.translations.automaticallyPopup", false);
+user_pref("browser.toolbars.bookmarks.visibility", "never");
+user_pref("sidebar.position_start", false);

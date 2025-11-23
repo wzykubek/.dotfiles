@@ -1,0 +1,2 @@
+[Environment]
+SIGNAL_PASSWORD_STORE=gnome-libsecret

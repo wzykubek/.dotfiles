@@ -1,0 +1,9 @@
+#!/usr/bin/env sh
+
+# Wallpaper selector and switcher.
+
+WALLPAPER_PATH="$(imv "$(xdg-user-dir PICTURES)/Wallpapers")"
+if [ -z "$WALLPAPER_PATH" ]; then exit; fi
+
+pkill swaybg
+setsid -f swaybg -i "$WALLPAPER_PATH"

@@ -1,0 +1,18 @@
+#!/usr/bin/env sh
+
+# Power menu.
+
+OPT="$(printf "lock\nsuspend\nlogout\nshutdown\nreboot\nfirmware" | dmenu -l 6 -p 'power')"
+if [ -z "$OPT" ]; then exit; fi
+
+case "$OPT" in
+"lock") swaylock ;;
+"logout") riverctl exit ;;
+"suspend")
+    swaylock &
+    systemctl suspend
+    ;;
+"shutdown") systemctl poweroff ;;
+"reboot") systemctl reboot ;;
+"firmware") systemctl reboot --firmware-setup ;;
+esac

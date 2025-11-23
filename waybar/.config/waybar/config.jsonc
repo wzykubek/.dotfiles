@@ -1,0 +1,80 @@
+{
+    "height": 20,
+    "spacing": 10,
+
+    "fixed-center": false,
+    "expand-center": true,
+
+    "modules-left": [
+        "river/tags",
+        "river/layout" // Not working
+    ],
+
+    "modules-center": [
+        "river/window"
+    ],
+
+    "modules-right": [
+        "tray",
+        "network",
+        "wireplumber",
+        "backlight",
+        "battery",
+        "clock"
+    ],
+
+    "river/tags": {
+        "num-tags": 10,
+        "hide-vacant": true,
+        "tag-labels": [
+            " 1",
+            "󰖟 2",
+            " 3",
+            " 4",
+            " 5",
+            " 6",
+            " 7",
+            " 8",
+            " 9",
+            "󰭹 10"
+        ]
+    },
+
+    "network": {
+        "format-wifi": "{ifname} ",
+        "format-ethernet": "{ifname} 󰛳",
+        "tooltip-format": "{ifname} via {gwaddr}",
+        "format-disconnected": "dis 󰅛",
+        "format-alt": "{ipaddr} ({ifname})"
+    },
+
+    "wireplumber": {
+        "format": "{volume}% {icon}",
+        "format-icons": ["", "", ""]
+    },
+
+    "backlight": {
+      "format": "{percent}% {icon}",
+      "format-icons": ["󰃞", "󰃟", "󰃠"]
+    },
+
+    "battery": {
+        "states": {
+            "good": 80,
+            "warning": 30,
+            "critical": 15
+        },
+        "events": {
+            "on-discharging-warning": "notify-send -u normal 'Low battery'",
+            "on-discharging-critical": "notify-send -u critical 'Very low battery'",
+            "on-charging-100": "notify-send -u normal 'Battery full'"
+        },
+        "format": "{capacity}% {icon}",
+        "format-charging": "{capacity}% 󰂄",
+        "format-icons": ["󰁺", "󰁻", "󰁼", "󰁽", "󰁾", "󰁿", "󰂀", "󰂁", "󰂂", "󰁹"]
+    },
+
+    "clock": {
+        "format": "{:%d-%m  %H:%M }"
+    }
+}

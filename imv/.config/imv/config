@@ -1,0 +1,38 @@
+# vim:set ft=conf
+[options]
+overlay = true
+overlay_position_bottom = true
+loop_input = false
+
+# Appearance
+overlay_font = ":11" # Font broken
+background = 191724
+overlay_background_color = 524f67
+overlay_text_color = e0def4
+
+[binds]
+# Unbind defaults
+t = ''
+d = ''
+s = ''
+<Shift+S> = ''
+<Shift+T> = ''
+<Ctrl+r> = ''
+
+<Shift+J> = next
+<Shift+K> = prev
+
+q = quit
+b = overlay
+<space> = slideshow +2
+<Escape> = slideshow 0
+p = toggle_playing
+
+r = rotate by 90
+c = reset; center
+<equal> = zoom actual
+
+# Scripts
+<Return> = exec echo $imv_current_file; quit
+<Ctrl+c> = exec wl-copy < $imv_current_file && notify-send -u normal "Copied image"
+<Ctrl+Shift+C> = exec wl-copy "$imv_current_file" && notify-send -u normal "Copied image path"

@@ -1,0 +1,19 @@
+[Unit]
+Description=rclone: Remote FUSE filesystem for cloud storage config %i
+Documentation=man:rclone(1)
+AssertPathIsDirectory=/mnt/%i
+After=network-online.target
+
+[Service]
+Type=notify
+ExecStart=\
+    /usr/bin/rclone mount \
+    --vfs-cache-mode writes \
+    --log-level INFO \
+    %i: /mnt/%i 
+ExecStop=/bin/fusermount -u /mnt/%i
+Restart=on-failure
+RestartSec=10
+
+[Install]
+WantedBy=default.target
