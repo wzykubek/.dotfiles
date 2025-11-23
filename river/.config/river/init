@@ -40,12 +40,11 @@ riverctl map normal Super+Shift Q close
 riverctl map normal Super+Shift E exit
 riverctl map normal Super+Shift B spawn "pkill -USR1 -f waybar" # Toggle
 
-riverctl map normal Super+Shift P spawn powermenu
-
 riverctl map normal Super Return spawn alacritty
-riverctl map normal Super D spawn dmenu-run
 riverctl map normal Super B spawn firefox
-riverctl map normal Super V spawn "$HOME/.local/bin/scripts/clipboard"
+riverctl map normal Super D spawn dmenu-run
+riverctl map normal Super P spawn dmenu-powermenu
+riverctl map normal Super V spawn dmenu-clipboard
 riverctl map normal Super C spawn 'zenity --title "Color selection" --color-selection'
 
 # Layout
