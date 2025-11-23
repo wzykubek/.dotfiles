@@ -147,4 +147,8 @@ video/x-ogm+ogg=mpv.desktop
 video/x-theora=mpv.desktop
 video/x-theora+ogg=mpv.desktop
 
-
+image/jpeg=imv.desktop
+image/png=imv.desktop
+image/gif=imv.desktop
+image/jxl=imv.desktop
+image/webp=imv.desktop
