@@ -1,0 +1,5 @@
+#!/usr/bin/env sh
+
+# Wrapper for websearch in dmenu.
+
+dmenu -p "web" </dev/null | xargs -r websearch

@@ -45,6 +45,7 @@ riverctl map normal Super B spawn firefox
 riverctl map normal Super D spawn dmenu-run
 riverctl map normal Super P spawn dmenu-powermenu
 riverctl map normal Super V spawn dmenu-clipboard
+riverctl map normal Super W spawn dmenu-websearch
 riverctl map normal Super C spawn 'zenity --title "Color selection" --color-selection'
 
 # Layout

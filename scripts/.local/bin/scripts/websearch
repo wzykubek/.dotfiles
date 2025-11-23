@@ -1,0 +1,10 @@
+#!/usr/bin/env sh
+
+# Search web with command.
+
+SEARCH_URL="https://duckduckgo.com/?q="
+
+xdg-open "${SEARCH_URL}$(
+    IFS=+
+    echo "$*"
+)"
