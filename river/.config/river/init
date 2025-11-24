@@ -8,6 +8,7 @@ systemctl --user restart xdg-desktop-portal
 river-ultitile &
 waybar &
 mako &
+swayidle -w &
 wl-paste --watch cliphist store &
 # }}}
 

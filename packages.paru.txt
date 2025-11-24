@@ -27,6 +27,7 @@ rclone
 river
 slurp
 swaybag
+swayidle
 swaylock
 tlp
 ttf-iosevka-nerd
