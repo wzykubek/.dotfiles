@@ -2,6 +2,10 @@ background-color=#26233a
 text-color=#e0def4
 border-color=#524f67
 progress-color=over #31748f
+font=Iosevka NFP 10
+width=400
+icon-location=right
+padding=8
 
 [urgency=high]
 border-color=#eb6f92

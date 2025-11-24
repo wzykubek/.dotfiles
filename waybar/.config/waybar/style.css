@@ -12,6 +12,10 @@ window#waybar {
     padding: 0;
 }
 
+.modules-left, .modules-center, .modules-right {
+    background: @base;
+}
+
 #tags button,
 .modules-left,
 .modules-center,
