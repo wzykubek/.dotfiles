@@ -1,0 +1,22 @@
+set promptfmt "\033[35;1m%u@%h\033[0m \033[36;1m%d\033[0m\033[1m%f\033[0m"
+set ratios 1:2:4
+set previewer ~/.config/lf/pv.sh
+
+map gh cd ~
+map gm cd /mnt
+
+map d
+map dd cut
+map dD delete
+
+map . set hidden!
+map i $bat --paging=always $f
+map x $extract $f
+
+cmd Cd %{{ # https://github.com/gokcehan/lf/issues/1713
+    result="$(zoxide query --exclude "$PWD" "$@" | sed 's/\\/\\\\/g;s/"/\\"/g')"    
+    lf -remote "send $id cd \"$result\""
+}}
+cmd on-cd &{{
+    zoxide add "$PWD"
+}}

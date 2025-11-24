@@ -1,0 +1,12 @@
+#!/usr/bin/env sh
+
+# Unified archive extractor.
+
+case "$1" in
+*.tar*)
+    mkdir "${1%.tar*}" && tar xfv "$1" -C "${1%.tar*}"
+    ;;
+*.zip)
+    unzip "$1" -d "${1%.zip}"
+    ;;
+esac
