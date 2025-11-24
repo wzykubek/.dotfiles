@@ -1,10 +1,13 @@
 vim.g.mapleader = " "
 vim.g.maplocalleader = "\\"
 
-vim.g.neovide_scale_factor = 1.4
-vim.g.neovide_padding_top = 5
-vim.g.neovide_padding_bottom = 5
-vim.g.neovide_refresh_rate = 165
+if vim.g.neovide then
+    vim.g.neovide_scale_factor = 1.0
+    vim.g.neovide_padding_top = 5
+    vim.g.neovide_padding_bottom = 5
+    vim.g.neovide_refresh_rate = 165
+end
+vim.o.guifont = "Iosevka NFP:h14"
 
 vim.o.shiftwidth = 4                    -- Indent size
 vim.o.tabstop = 4                       -- Tab character size
