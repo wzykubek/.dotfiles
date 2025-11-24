@@ -2,6 +2,7 @@
 text/*=nvim.desktop
 text/plain=nvim.desktop
 inode/x-empty=nvim.desktop
+application/x-zerosize=nvim.desktop
 
 text/html=firefox.desktop
 x-scheme-handler/http=firefox.desktop

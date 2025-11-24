@@ -3,6 +3,7 @@
 
 export EDITOR='nvim'
 export TERMINAL='alacritty'
+export DE='gnome' # Required for xdg-open and xdg-exec-terminal
 
 eval $(dircolors) # Set LS_COLORS for use in e.g. zsh completion menu
 export MANPAGER="sh -c 'awk '\''{ gsub(/\x1B\[[0-9;]*m/, \"\", \$0); gsub(/.\x08/, \"\", \$0); print }'\'' | bat -p -lman'" # man-db
