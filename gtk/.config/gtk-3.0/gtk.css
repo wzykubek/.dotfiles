@@ -1,9 +1,19 @@
+decoration {
+  box-shadow: none;
+  padding: 0;
+}
+.csd.popup decoration {
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.2), 0 0 0 1px rgba(0, 0, 0, 0.65);
+}
+
+dialog,
+headerbar,
+window,
+window decoration-overlay {
+  border-radius: 0;
+}
+
 headerbar.default-decoration {
   margin-bottom: 50px;
   margin-top: -100px;
-}
-
-window.csd,
-window.csd decoration {
-  box-shadow: none;
 }

@@ -1,6 +1,7 @@
 #!/bin/sh
 
 # Startup {{{
+sh "$XDG_CONFIG_HOME/gsettings/config"
 systemctl --user import-environment WAYLAND_DISPLAY XDG_CURRENT_DESKTOP
 dbus-update-activation-environment --systemd WAYLAND_DISPLAY XDG_CURRENT_DESKTOP=river
 systemctl --user restart xdg-desktop-portal

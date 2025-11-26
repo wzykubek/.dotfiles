@@ -1,0 +1,5 @@
+[Context]
+filesystems=xdg-config/kcminputrc:ro;xdg-config/kdeglobals:ro;xdg-config/gtk-4.0:ro;xdg-config/gtk-3.0:ro;xdg-config/fontconfig:ro;xdg-data/color-schemes:ro
+
+[Environment]
+QT_QPA_PLATFORMTHEME=kde

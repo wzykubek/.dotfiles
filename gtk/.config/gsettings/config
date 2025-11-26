@@ -1,0 +1,10 @@
+#!/usr/bin/env sh
+
+gsettings set org.gnome.desktop.interface color-scheme "prefer-dark"
+gsettings set org.gnome.desktop.interface gtk-theme "Adwaita-dark"
+gsettings set org.gnome.desktop.wm.preferences button-layout "appmenu:" # Remove window buttons
+
+gsettings set org.gtk.Settings.FileChooser sort-directories-first "true"
+gsettings set org.gtk.gtk4.Settings.FileChooser sort-directories-first "true"
+gsettings set org.gtk.Settings.FileChooser startup-mode "cwd"
+gsettings set org.gtk.gtk4.Settings.FileChooser startup-mode "cwd"
