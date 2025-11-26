@@ -47,11 +47,7 @@ return {
         version = '1.*',
         event = "InsertEnter",
         opts = {
-            keymap = {
-                preset = "enter",
-                ["<Tab>"] = { "select_next", "fallback" },
-                ["<S-Tab>"] = { "select_prev", "fallback" },
-            },
+            keymap = { preset = "super-tab" },
             completion = { documentation = { auto_show = true } },
         }
 
@@ -69,13 +65,17 @@ return {
             },
         },
         keys = {
-            { "<leader>fb", "<cmd>FzfLua buffers<cr>",      desc = "Buffers" },
-            { "<leader>ff", "<cmd>FzfLua files<cr>",        desc = "Files" },
-            { "<leader>fg", "<cmd>FzfLua git_files<cr>",    desc = "Git files" },
-            { "<leader>fh", "<cmd>FzfLua git_hunks<cr>",    desc = "Git hunks" },
-            { "<leader>fs", "<cmd>FzfLua git_status<cr>",   desc = "Git status" },
-            { "<leader>fL", "<cmd>FzfLua git_commits<cr>",  desc = "Git log for project" },
-            { "<leader>fl", "<cmd>FzfLua git_bcommits<cr>", desc = "Git log for current file" },
+            { "<leader>ff", "<cmd>FzfLua files<cr>",               desc = "Files" },
+            { "<leader>fb", "<cmd>FzfLua buffers<cr>",             desc = "Buffers" },
+            { "<leader>lg", "<cmd>FzfLua live_grep<cr>",           desc = "Live grep" },
+            { "<leader>gf", "<cmd>FzfLua git_files<cr>",           desc = "Git files" },
+            { "<leader>gh", "<cmd>FzfLua git_hunks<cr>",           desc = "Git hunks" },
+            { "<leader>gs", "<cmd>FzfLua git_status<cr>",          desc = "Git status" },
+            { "<leader>gL", "<cmd>FzfLua git_commits<cr>",         desc = "Git log for project" },
+            { "<leader>gl", "<cmd>FzfLua git_bcommits<cr>",        desc = "Git log for current file" },
+            { "gA",         "<cmd>FzfLua lsp_references<cr>",      desc = "LSP references" },
+            { "gI",         "<cmd>FzfLua lsp_implementations<cr>", desc = "LSP implementations" },
+            { "g.",         "<cmd>FzfLua lsp_code_actions<cr>",    desc = "LSP code actions" },
         },
         cmd = "FzfLua"
     }
