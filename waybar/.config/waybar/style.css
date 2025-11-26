@@ -38,6 +38,12 @@ window#waybar {
     border: none;
 }
 
+#layout {
+    background: @surface;
+    color: @iris;
+    padding: 0 10px;
+}
+
 #network {
     color: @love;
 }

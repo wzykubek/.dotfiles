@@ -6,11 +6,11 @@
     "expand-center": true,
 
     "modules-left": [
-        "river/tags",
-        "river/layout" // Not working
+        "river/tags"
     ],
 
     "modules-center": [
+        "river/layout",
         "river/window"
     ],
 
@@ -38,6 +38,10 @@
             " 9",
             "󰭹 10"
         ]
+    },
+
+    "river/layout": {
+        "format": " {}"
     },
 
     "network": {
