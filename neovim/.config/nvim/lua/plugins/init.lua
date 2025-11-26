@@ -9,6 +9,27 @@ return {
         end
     },
     {
+        "nvim-treesitter/nvim-treesitter",
+        branch = "master",
+        lazy = false,
+        build = ":TSUpdate",
+        config = function()
+            require('nvim-treesitter.configs').setup({
+                ensure_installed = {
+                    "go",
+                    "python",
+                    "zig",
+                    "lua",
+                    "markdown",
+                    "markdown_inline"
+                },
+                highlight = {
+                    enable = true,
+                }
+            })
+        end,
+    },
+    {
         'nvim-lualine/lualine.nvim',
         lazy = false,
         dependencies = { 'nvim-tree/nvim-web-devicons' },
