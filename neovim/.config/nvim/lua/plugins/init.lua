@@ -14,14 +14,19 @@ return {
         lazy = false,
         build = ":TSUpdate",
         config = function()
+            vim.treesitter.language.register('gotmpl', 'template')
             require('nvim-treesitter.configs').setup({
                 ensure_installed = {
                     "go",
-                    "python",
+                    "gotmpl",
+                    "html",
+                    "css",
                     "zig",
+                    "python",
                     "lua",
                     "markdown",
-                    "markdown_inline"
+                    "markdown_inline",
+                    "gitignore"
                 },
                 highlight = {
                     enable = true,
