@@ -44,6 +44,10 @@
         "format": " {}"
     },
 
+    "river/window": {
+        "max-length": 60
+    },
+
     "network": {
         "format-wifi": "{ifname} ",
         "format-ethernet": "{ifname} 󰛳",
