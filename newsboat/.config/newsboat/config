@@ -1,0 +1,56 @@
+# vim filetype=conf
+urls-source miniflux
+miniflux-url https://news.brono.cloud
+miniflux-login wzykubek
+miniflux-passwordeval "secret-tool lookup service miniflux user wzykubek"
+miniflux-show-special-feeds yes # Show "Starred items" feed
+miniflux-flag-star a
+miniflux-flag-save a # Not merged yet
+
+# run-on-startup select-tag
+# prepopulate-query-feeds yes
+auto-reload yes
+reload-threads 5
+reload-time 15
+
+browser newsboat-browser
+
+# Bindings {{{
+unbind-key r
+unbind-key A
+unbind-key C
+unbind-key l
+
+bind Q everywhere hard-quit
+bind R everywhere reload-all
+bind a articlelist toggle-show-read-feeds
+
+bind k everywhere up
+bind j everywhere down
+# bind h everywhere quit
+# bind l feedlist,articlelist open
+bind g everywhere home
+bind G everywhere end
+# }}}
+
+# Look & Feel {{{
+article-sort-order date-desc
+show-title-bar no
+show-keymap-hint no
+show-read-articles no
+
+color background          color8   default
+color listnormal          color8   default
+color listnormal_unread   color7   default      bold
+color listfocus           color0   color6       bold
+color listfocus_unread    color0   color6       bold
+color info                color7   color8
+color article             color7   default
+
+highlight article "^(Feed|Author|Date|Link): .*$" color4 default
+highlight article "^Title:\s*(.*$)" color3 default bold
+highlight article "^(Feed|Author|Date|Link|Title): " color5 default bold
+highlight article "https?://[^ ]+" color2 default underline
+highlight article "\\[[0-9]+\\]" color2 default bold
+highlight article "\\[image\\ [0-9]+:.*\\]" color2 default bold
+# }}}

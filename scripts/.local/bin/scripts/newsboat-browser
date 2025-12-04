@@ -1,0 +1,12 @@
+#!/bin/sh
+
+#
+
+case "$1" in
+*youtube.com* | *youtu.be*)
+    setsid -f "$(command -v io.mpv.Mpv mpv | head -1)" --no-terminal -- "$1" 1>/dev/null 2>&1
+    ;;
+*)
+    setsid -f firefox "$1" 1>/dev/null 2>&1
+    ;;
+esac
