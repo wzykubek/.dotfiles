@@ -22,7 +22,7 @@ man-db
 mew
 networkmanager
 newsboat
-paru
+yay
 rclone
 river
 slurp

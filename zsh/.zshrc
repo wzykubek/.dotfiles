@@ -96,9 +96,10 @@ bindkey '^[[Z' reverse-menu-complete                        # Shift+Tab
 export FZF_CTRL_T_OPTS="--preview 'bat -n --color=always {}'"
 export FZF_ALT_C_OPTS="--preview 'eza --tree -L 3 --icons=auto --color=always --group-directories-first {} | head -200'"
 
-_fzf_complete_paru() {
-    if [[ "$@" == "paru -S"* ]]; then
-        _fzf_complete --multi --preview "paru -Si {1}" -- "$@" < <(paru -Slq)
+_fzf_complete_yay() {
+    if [[ "$@" == "yay -S"* ]]; then
+        _fzf_complete --multi --preview-window="65%" \
+            --preview "yay -Si {1}" -- "$@" < <(yay -Slq)
     fi
 }
 
