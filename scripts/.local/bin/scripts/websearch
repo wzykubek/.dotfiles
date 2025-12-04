@@ -4,7 +4,12 @@
 
 SEARCH_URL="https://duckduckgo.com/?q="
 
-xdg-open "${SEARCH_URL}$(
-    IFS=+
-    echo "$*"
-)"
+case "$1" in
+http?://*) xdg-open "$1" ;;
+*)
+    xdg-open "${SEARCH_URL}$(
+        IFS=+
+        echo "$*"
+    )"
+    ;;
+esac
