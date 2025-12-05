@@ -35,6 +35,10 @@ return {
         end,
     },
     {
+        'neovim/nvim-lspconfig',
+        lazy = false,
+    },
+    {
         'nvim-lualine/lualine.nvim',
         lazy = false,
         dependencies = { 'nvim-tree/nvim-web-devicons' },
