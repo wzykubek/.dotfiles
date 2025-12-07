@@ -1,5 +1,6 @@
 adwaita-qt5-git
 adwaita-qt6-git
+aerc
 base
 base-devel
 bluez
@@ -12,6 +13,7 @@ fwupd
 gnome-keyring
 gnome-themes-extra
 gnome-themes-extra-gtk2
+gotmplfmt
 grim
 harper
 imagemagick
@@ -23,7 +25,6 @@ man-db
 mew
 networkmanager
 newsboat
-yay
 rclone
 river
 slurp
@@ -34,6 +35,10 @@ tinymist
 tlp
 ttf-iosevka-nerd
 unrar-free
+vscode-css-languageserver
+vscode-html-languageserver
+vscode-json-languageserver
+w3m
 waybar
 wl-clipboard
 wlr-randr
@@ -42,6 +47,7 @@ xdg-desktop-portal-gtk
 xdg-desktop-portal-wlr
 xdg-user-dirs
 xdg-utils
+yay
 yt-dlp
 zathura
 zathura-cb
