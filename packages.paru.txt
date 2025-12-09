@@ -27,6 +27,7 @@ networkmanager
 newsboat
 rclone
 river
+ruff
 slurp
 swaybag
 swayidle
