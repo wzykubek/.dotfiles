@@ -19,6 +19,8 @@ riverctl keyboard-layout pl
 riverctl set-repeat 50 300
 
 riverctl input pointer-1102-4639-DELL0816:00_044E:121F_Touchpad natural-scroll enabled
+riverctl input "pointer-1102-4639-DELL0816:00_044E:121F_Mouse" scroll-button BTN_MIDDLE
+riverctl input "pointer-1102-4639-DELL0816:00_044E:121F_Mouse" scroll-method button
 wlr-randr --output DP-1 --mode 3440x1440 --pos 0,0
 wlr-randr --output eDP-1 --mode 1366x768 --pos 1037,1440
 
