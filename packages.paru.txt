@@ -25,6 +25,7 @@ man-db
 mew
 networkmanager
 newsboat
+pnpm
 rclone
 river
 ruff

@@ -53,5 +53,22 @@ vim.api.nvim_create_user_command("OpenPdf", function()
 end, {})
 vim.keymap.set('n', '<leader>op', ':OpenPdf<cr>', { silent = true, desc = 'Open current file as PDF' })
 
+vim.api.nvim_create_autocmd("Filetype", {
+	pattern = {
+		"css",
+		"html",
+		"javascript",
+		"javascriptreact",
+		"typescript",
+		"typescriptreact",
+		"yaml",
+	},
+	callback = function()
+		vim.bo.expandtab = true
+		vim.bo.tabstop = 2
+		vim.bo.shiftwidth = 2
+	end
+})
+
 require("config.lazy")
 require("config.lsp")

@@ -23,6 +23,8 @@ return {
                 "gotmpl",
                 "html",
                 "css",
+                "typescript",
+                "tsx",
                 "zig",
                 "python",
                 "lua",
