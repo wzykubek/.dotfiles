@@ -1,0 +1,13 @@
+#!/bin/sh
+
+# Synchronize blog posts from notes vault to git repository.
+# Only non-draft posts are synced.
+
+BLOG_DIR="$HOME/Notes/@Blog"
+BLOG_REPO="$HOME/Dev/wzykubek-xyz"
+
+for lang in en pl; do
+    for file in $(rg -l "draft: false" ${BLOG_DIR}/${lang}/*); do
+        rsync -av "$file" ${BLOG_REPO}/content/$lang/blog
+    done
+done

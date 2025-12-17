@@ -1,0 +1,5 @@
+#!/bin/sh
+
+# Edit default Sieve filter.
+
+sieveman -v -H imap.mailbox.org -u me@wzykubek.xyz -p "$(secret-tool lookup service imap user me@wzykubek.xyz)" edit Open-Xchange
